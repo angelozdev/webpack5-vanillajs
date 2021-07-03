@@ -4,7 +4,7 @@ import { getData } from "./getUserList";
 import "./cardList.css";
 
 async function CardList() {
-  const users = await getData({ results: 3 });
+  const users = await getData({ results: 10 });
 
   if (!users.length) {
     return "<p>There are no users.</p>";

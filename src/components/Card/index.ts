@@ -2,7 +2,7 @@ import { User } from "types/response";
 import { stringToHtml } from "src/utils";
 import "./card.css";
 
-function Card({ name, picture, phone, gender, registered }: User) {
+function Card({ name, picture, phone, gender, registered, nat }: User) {
   const view = `
     <li class="card__container">
       <figure class="card__avatar_container">
@@ -16,7 +16,7 @@ function Card({ name, picture, phone, gender, registered }: User) {
         />
       </figure>
       <h1 class="card__title">
-        ${name.first} ${name.last}
+        ${name.first} ${name.last} <sup>(${nat})</sup>
       </h1>
 
       <div class="card__details">
