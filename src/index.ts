@@ -1,7 +1,8 @@
 import App from "./App";
+import { EnvironmentVariables } from "src/constants";
 
 async function render() {
-  console.log(process.env.NODE_ENV);
+  console.log(EnvironmentVariables.NODE_ENV);
   const root = document.getElementById("root");
 
   if (!root) {

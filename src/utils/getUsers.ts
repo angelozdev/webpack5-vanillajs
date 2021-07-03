@@ -1,4 +1,5 @@
 import axios from "axios";
+import { EnvironmentVariables } from "src/constants";
 import { Response, User, Options } from "types/response";
 
 async function getUsers(
@@ -7,8 +8,9 @@ async function getUsers(
 ): Promise<User[]> {
   const { results, gender, nat, page } = options;
   const params = { results, gender, nat, page };
+  const apiURL = EnvironmentVariables.API_URL || "";
   return axios
-    .get<Response>("https://randomuser.me/api/", {
+    .get<Response>(apiURL, {
       params,
     })
     .then(({ data }) => {
