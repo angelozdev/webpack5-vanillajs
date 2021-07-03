@@ -1,5 +1,5 @@
-import { Card } from "../";
-import { stringToHtml } from "src/utils";
+import { Card } from "components";
+import { stringToHtml } from "utils";
 import { getData } from "./getUserList";
 import "./cardList.css";
 

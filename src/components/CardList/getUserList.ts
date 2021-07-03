@@ -1,4 +1,4 @@
-import { getUsers, localStorageUtils } from "src/utils";
+import { getUsers, localStorageUtils } from "utils";
 import { Options, User } from "types/response";
 
 export async function getData(options?: Options) {

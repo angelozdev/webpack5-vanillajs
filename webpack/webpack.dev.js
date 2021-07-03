@@ -25,6 +25,8 @@ module.exports = /** @type {import('webpack').Configuration} */ ({
     extensions: [".ts", ".js"],
     alias: {
       src: path.resolve(__dirname, "../", "src"),
+      components: path.resolve(__dirname, "../", "src", "components"),
+      utils: path.resolve(__dirname, "../", "src", "utils"),
     },
   },
   plugins: [
