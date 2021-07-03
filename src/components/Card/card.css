@@ -1,0 +1,24 @@
+.card__container {
+  border: 1px solid lightgray;
+  padding: 1rem;
+}
+
+.card__avatar_container {
+  margin: 0 auto;
+  max-width: 150px;
+  overflow: hidden;
+}
+
+.card__avatar {
+  padding: 0.2rem;
+  border-radius: 50%;
+  border: 1px solid lightgray;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.card__title {
+  font-size: 1.5rem;
+  text-align: center;
+}

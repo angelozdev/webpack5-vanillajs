@@ -5,7 +5,7 @@ module.exports = {
   mode: "development",
   entry: path.resolve(__dirname, "../src", "index.ts"),
   output: {
-    filename: "bundle.[chunkhash].js",
+    filename: "[name].[chunkhash].js",
     path: path.resolve(__dirname, "../dist"),
   },
   module: {

@@ -1,13 +1,13 @@
 // components
-import { Card, Wrapper } from "./components";
+import { CardList, Wrapper } from "./components";
 
 // styles
 import "normalize.css";
 import "./styles/global.css";
 
-function App() {
-  const card = Card({ children: "Hola mundo" });
-  return Wrapper({ children: card });
+async function App() {
+  const cardList = await CardList();
+  return Wrapper({ children: cardList });
 }
 
 export default App;

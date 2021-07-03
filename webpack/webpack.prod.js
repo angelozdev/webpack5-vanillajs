@@ -7,7 +7,7 @@ module.exports = {
   mode: "production",
   entry: path.resolve(__dirname, "../src", "index.ts"),
   output: {
-    filename: "src/bundle.[chunkhash].js",
+    filename: "src/[name].[chunkhash].js",
     path: path.resolve(__dirname, "../dist"),
   },
   module: {

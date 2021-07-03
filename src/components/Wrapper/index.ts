@@ -1,3 +1,4 @@
+import { stringToHtml } from "../../utils";
 import "./wrapper.css";
 
 interface Props {
@@ -11,7 +12,7 @@ function Wrapper({ children }: Props) {
     </div>
   `;
 
-  return view;
+  return stringToHtml(view);
 }
 
 export default Wrapper;
