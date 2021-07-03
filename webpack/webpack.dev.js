@@ -1,8 +1,8 @@
-/** @type {import('webpack').Configuration} */
 const path = require("path");
 const HTMLPlugin = require("html-webpack-plugin");
+const { SourceMapDevToolPlugin } = require("webpack");
 
-module.exports = {
+module.exports = /** @type {import('webpack').Configuration} */ ({
   mode: "development",
   entry: path.resolve(__dirname, "../src", "index.ts"),
   output: {
@@ -23,10 +23,16 @@ module.exports = {
   },
   resolve: {
     extensions: [".ts", ".js"],
+    alias: {
+      src: path.resolve(__dirname, "../", "src"),
+    },
   },
   plugins: [
     new HTMLPlugin({
       template: path.resolve(__dirname, "../public", "index.html"),
     }),
+    new SourceMapDevToolPlugin({
+      filename: "[file].map",
+    }),
   ],
-};
+});

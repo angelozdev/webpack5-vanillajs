@@ -1,5 +1,5 @@
 import { User } from "types/response";
-import { stringToHtml } from "../../utils";
+import { stringToHtml } from "src/utils";
 import "./card.css";
 
 function Card({ name, picture, phone, gender, registered }: User) {

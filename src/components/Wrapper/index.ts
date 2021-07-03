@@ -1,4 +1,4 @@
-import { stringToHtml } from "../../utils";
+import { stringToHtml } from "src/utils";
 import "./wrapper.css";
 
 interface Props {

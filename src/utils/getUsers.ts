@@ -1,5 +1,5 @@
 import axios from "axios";
-import { Response, User, Options } from "../../types/response";
+import { Response, User, Options } from "types/response";
 
 async function getUsers(
   options: Options = {},

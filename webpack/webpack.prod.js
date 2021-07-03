@@ -1,10 +1,10 @@
-/** @type {import('webpack').Configuration} */
 const path = require("path");
 const HTMLPlugin = require("html-webpack-plugin");
 const MiniCSSExtractPlugin = require("mini-css-extract-plugin");
 const CSSMinimizerPlugin = require("css-minimizer-webpack-plugin");
+const { SourceMapDevToolPlugin } = require("webpack");
 
-module.exports = {
+module.exports = /** @type {import('webpack').Configuration} */ ({
   mode: "production",
   entry: path.resolve(__dirname, "../src", "index.ts"),
   output: {
@@ -25,6 +25,9 @@ module.exports = {
   },
   resolve: {
     extensions: [".ts", ".js"],
+    alias: {
+      src: path.resolve(__dirname, "../", "src"),
+    },
   },
   optimization: {
     minimize: true,
@@ -48,5 +51,8 @@ module.exports = {
     new MiniCSSExtractPlugin({
       filename: "styles/[name].[chunkhash].css",
     }),
+    new SourceMapDevToolPlugin({
+      filename: "[file].map",
+    }),
   ],
-};
+});

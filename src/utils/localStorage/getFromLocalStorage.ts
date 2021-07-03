@@ -10,15 +10,14 @@ function getFromLocalStorage<T = unknown>(
 ): T | null {
   const dataFromLocalStorage = localStorage.getItem(nameItem);
 
-  if (!dataFromLocalStorage) {
-    return null;
-  }
-
+  if (!dataFromLocalStorage) return null;
   if (!stringify && dataFromLocalStorage) {
     return dataFromLocalStorage as T | any;
   }
+  const parsedData = JSON.parse(dataFromLocalStorage);
+  if (!parsedData) return null;
 
-  return JSON.parse(dataFromLocalStorage);
+  return parsedData;
 }
 
 export default getFromLocalStorage;
