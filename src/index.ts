@@ -6,8 +6,16 @@ async function render() {
   if (!root) {
     throw new Error("[INDEX] Missing root element");
   }
+
   root.innerHTML = "Loading...";
-  root.innerHTML = await App();
+
+  try {
+    const app = await App();
+    root.innerHTML = app;
+  } catch (error) {
+    console.error(error);
+    root.innerHTML = "[ERROR] Server Internal Error";
+  }
 }
 
 document.addEventListener("DOMContentLoaded", render);

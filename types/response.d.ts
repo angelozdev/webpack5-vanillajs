@@ -105,3 +105,10 @@ export type Nat =
   | "NZ"
   | "TR"
   | "US";
+
+export interface Options {
+  results?: number;
+  gender?: "female" | "male";
+  nat?: Nat;
+  page?: number;
+}

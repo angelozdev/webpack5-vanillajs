@@ -7,6 +7,8 @@ function Card({ name, picture, phone, gender, registered }: User) {
     <li class="card__container">
       <figure class="card__avatar_container">
         <img
+          height="150px"
+          width="150px"
           loading="lazy"
           class="card__avatar"
           alt="${name.first} ${name.last}"
