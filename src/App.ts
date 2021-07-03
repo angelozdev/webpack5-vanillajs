@@ -1,5 +1,5 @@
 // components
-import { CardList, Wrapper } from "./components";
+import { Wrapper, CardList } from "./components";
 
 // styles
 import "normalize.css";

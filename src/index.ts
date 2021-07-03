@@ -1,6 +1,7 @@
 import App from "./App";
 
 async function render() {
+  console.log(process.env.NODE_ENV);
   const root = document.getElementById("root");
 
   if (!root) {
@@ -14,7 +15,7 @@ async function render() {
     root.innerHTML = app;
   } catch (error) {
     console.error(error);
-    root.innerHTML = "[ERROR] Server Internal Error";
+    root.innerHTML = "[INDEX] Server Internal Error";
   }
 }
 
