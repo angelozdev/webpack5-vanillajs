@@ -1,8 +1,13 @@
 import App from "./App";
 import { EnvironmentVariables } from "src/constants";
 
+const { NODE_ENV } = EnvironmentVariables;
+
+if (NODE_ENV.value === "development") {
+  console.log("[MODE]", NODE_ENV.value);
+}
+
 async function render() {
-  console.log(EnvironmentVariables.NODE_ENV);
   const root = document.getElementById("root");
 
   if (!root) {

@@ -1,15 +1,13 @@
 import { getUsers, localStorageUtils } from "utils";
 import { Options, User } from "types/response";
 
-export async function getData(options?: Options) {
+export async function getData(options?: Options): Promise<User[]> {
   const usersFromLocalStorage = localStorageUtils.getItem<User[]>("data");
-  const optionsFromLocalStorage = localStorageUtils.getItem<string>("options", {
-    parse: false,
-  });
+  const optionsFromLocalStorage = localStorageUtils.getItem<Options>("options");
 
   if (
     usersFromLocalStorage &&
-    optionsFromLocalStorage === JSON.stringify(options)
+    JSON.stringify(optionsFromLocalStorage) === JSON.stringify(options)
   ) {
     return usersFromLocalStorage;
   }

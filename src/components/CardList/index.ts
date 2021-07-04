@@ -1,10 +1,9 @@
 import { Card } from "components";
-import { stringToHtml } from "utils";
 import { getData } from "./getUserList";
 import "./cardList.css";
 
 async function CardList() {
-  const users = await getData({ results: 10 });
+  const users = await getData({ results: 9 });
 
   if (!users.length) {
     return "<p>There are no users.</p>";
@@ -16,7 +15,7 @@ async function CardList() {
     </ul>
   `;
 
-  return stringToHtml(view);
+  return view;
 }
 
 export default CardList;

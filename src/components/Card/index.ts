@@ -1,5 +1,4 @@
 import { User } from "types/response";
-import { stringToHtml } from "utils";
 import "./card.css";
 
 function Card({ name, picture, phone, gender, registered, nat }: User) {
@@ -33,7 +32,7 @@ function Card({ name, picture, phone, gender, registered, nat }: User) {
     </li>
   `;
 
-  return stringToHtml(view);
+  return view;
 }
 
 export default Card;

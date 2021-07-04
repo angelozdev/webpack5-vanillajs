@@ -1,13 +1,6 @@
 import { Items } from "types/localStorage";
 
-interface Options {
-  parse?: boolean;
-}
-
-function getFromLocalStorage<T = unknown>(
-  nameItem: Items,
-  { parse = true }: Options = {}
-): T | string {
+function getFromLocalStorage<T = unknown>(nameItem: Items): T | null {
   const dataFromLocalStorage = localStorage.getItem(nameItem) || "";
 
   const isValidData =
@@ -19,12 +12,9 @@ function getFromLocalStorage<T = unknown>(
     typeof dataFromLocalStorage === "string";
 
   if (!isValidData) {
-    return "";
+    return null;
   }
 
-  if (!parse && isValidData) {
-    return dataFromLocalStorage;
-  }
   const parsedData = JSON.parse(dataFromLocalStorage);
   return parsedData;
 }
