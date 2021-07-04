@@ -8,9 +8,9 @@ async function getUsers(
 ): Promise<User[]> {
   const { results, gender, nat, page } = options;
   const params = { results, gender, nat, page };
-  const apiURL = EnvironmentVariables.API_URL || "";
+  const { API_URL } = EnvironmentVariables;
   return axios
-    .get<Response>(apiURL, {
+    .get<Response>(API_URL.value, {
       params,
     })
     .then(({ data }) => {

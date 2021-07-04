@@ -4,7 +4,7 @@ import { Options, User } from "types/response";
 export async function getData(options?: Options) {
   const usersFromLocalStorage = localStorageUtils.getItem<User[]>("data");
   const optionsFromLocalStorage = localStorageUtils.getItem<string>("options", {
-    stringify: false,
+    parse: false,
   });
 
   if (

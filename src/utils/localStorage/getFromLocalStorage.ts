@@ -1,22 +1,31 @@
 import { Items } from "types/localStorage";
 
 interface Options {
-  stringify?: boolean;
+  parse?: boolean;
 }
 
 function getFromLocalStorage<T = unknown>(
   nameItem: Items,
-  { stringify = true }: Options = {}
-): T | null {
-  const dataFromLocalStorage = localStorage.getItem(nameItem);
+  { parse = true }: Options = {}
+): T | string {
+  const dataFromLocalStorage = localStorage.getItem(nameItem) || "";
 
-  if (!dataFromLocalStorage) return null;
-  if (!stringify && dataFromLocalStorage) {
-    return dataFromLocalStorage as T | any;
+  const isValidData =
+    !!dataFromLocalStorage &&
+    dataFromLocalStorage !== "undefined" &&
+    dataFromLocalStorage !== "null" &&
+    dataFromLocalStorage !== "{}" &&
+    dataFromLocalStorage !== "[]" &&
+    typeof dataFromLocalStorage === "string";
+
+  if (!isValidData) {
+    return "";
+  }
+
+  if (!parse && isValidData) {
+    return dataFromLocalStorage;
   }
   const parsedData = JSON.parse(dataFromLocalStorage);
-  if (!parsedData) return null;
-
   return parsedData;
 }
 
