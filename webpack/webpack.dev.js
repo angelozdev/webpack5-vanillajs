@@ -2,6 +2,7 @@ const path = require("path");
 const HTMLPlugin = require("html-webpack-plugin");
 const { SourceMapDevToolPlugin } = require("webpack");
 const DotEnv = require("dotenv-webpack");
+const { BundleAnalyzerPlugin } = require("webpack-bundle-analyzer");
 
 module.exports = /** @type {import('webpack').Configuration} */ ({
   mode: "development",
@@ -40,5 +41,6 @@ module.exports = /** @type {import('webpack').Configuration} */ ({
     new DotEnv({
       path: path.resolve(__dirname, "../", ".env.development"),
     }),
+    // new BundleAnalyzerPlugin(),
   ],
 });

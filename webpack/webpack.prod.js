@@ -4,6 +4,7 @@ const MiniCSSExtractPlugin = require("mini-css-extract-plugin");
 const CSSMinimizerPlugin = require("css-minimizer-webpack-plugin");
 const DotEnv = require("dotenv-webpack");
 const { SourceMapDevToolPlugin } = require("webpack");
+const { BundleAnalyzerPlugin } = require("webpack-bundle-analyzer");
 
 module.exports = /** @type {import('webpack').Configuration} */ ({
   mode: "production",
@@ -70,5 +71,6 @@ module.exports = /** @type {import('webpack').Configuration} */ ({
     new DotEnv({
       path: path.resolve(__dirname, "../", ".env.production"),
     }),
+    // new BundleAnalyzerPlugin(),
   ],
 });
