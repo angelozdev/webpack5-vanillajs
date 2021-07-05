@@ -37,5 +37,19 @@
     "@babel/runtime": "^7.14.6",
     "axios": "^0.21.1",
     "normalize.css": "^8.0.1"
-  }
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/angelozdev/webpack5-vanillajs.git"
+  },
+  "keywords": [
+    "webpack",
+    "vanillajs",
+    "babel",
+    "typescript"
+  ],
+  "bugs": {
+    "url": "https://github.com/angelozdev/webpack5-vanillajs/issues"
+  },
+  "homepage": "https://github.com/angelozdev/webpack5-vanillajs#readme"
 }
